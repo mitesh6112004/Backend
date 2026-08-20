@@ -8,10 +8,13 @@ let users = [];
 
 let port = 3000;
 
+// get all user
 app.get("/user", (req, res) => {
   res.send(users);
 });
 
+
+// add user
 app.post("/add", (req, res) => {
   let userData = req.body;
 
@@ -20,6 +23,7 @@ app.post("/add", (req, res) => {
   res.send(users);
 });
 
+// delete user
 app.delete("/remove/:id",(req,res) => {
     let id = req.params.id; 
 
@@ -30,6 +34,7 @@ app.delete("/remove/:id",(req,res) => {
     
 })
 
+// update user
 app.put("/update/:id", (req,res) => {
    let { id } = req.params ; 
    let { name } = req.body ; 
